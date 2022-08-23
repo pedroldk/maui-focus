@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiFocus.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Image
+                Source="bonsai.jpg"
+                SemanticProperties.Description="A nice bonsai!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Focus!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Remember to turn off your distractions while focusing"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout x:Name="OptionsPanel" Spacing="25" 
+            Padding="30,0" >
+
+                <VerticalStackLayout HorizontalOptions="Center" >
+                    <Label x:Name="_displayLabel"
+               Text="Click the '+' sign."
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+                    <Stepper Maximum="120"
+                 Increment="1"
+                 HorizontalOptions="Center"
+                 ValueChanged="OnStepperValueChanged"
+                 x:Name="_stepper"/>
+
+                    <Button x:Name="StartButton" IsEnabled="False"
+                Text="Go!"
+                Clicked="StartButton_Clicked"></Button>
+
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout IsVisible="false" HorizontalOptions="Center" x:Name="CountdownPanel" Spacing="25" 
+            Padding="30,0" >
+
+                <Label x:Name="_timeLeftLabel" Text="Starting timer...">
+                </Label>
+
+                <Button x:Name="StopButton"
+                Text="Stop!"
+                Clicked="StopButton_Clicked"></Button>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
